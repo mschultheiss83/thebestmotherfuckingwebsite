@@ -11,16 +11,17 @@ var r = document.getElementById("rbw"),
 
 function createControls() {
   var contrastButton = document.createElement('button');
-    contrastButton.id = "contrast";
-    contrastButton.classList.add('cont-inv');
-    contrastButton.innerText = stringArray[0];
-    contrastButton.tabIndex = 1;
+  contrastButton.id = "contrast";
+  contrastButton.classList.add('cont-inv');
+  contrastButton.innerText = stringArray[1];
+  contrastButton.tabIndex = 1;
 
   var nightModeButton = document.createElement('button');
-    nightModeButton.id = "invmode";
-    nightModeButton.classList.add('cont-inv');
-    nightModeButton.innerText = stringArray[2];
-    nightModeButton.tabIndex = 2;
+  nightModeButton.id = "invmode";
+  nightModeButton.classList.add('cont-inv');
+  nightModeButton.innerText = stringArray[3];
+  nightModeButton.tabIndex = 2;
+
   document.body.appendChild(contrastButton);
   document.body.appendChild(nightModeButton);
 }
@@ -38,13 +39,13 @@ function someControl(id, textArr, className) {
    * http://www.vanilla-js.com/
    * http://jsperf.com/getelementbyid-vs-jquery-id/44
    */
-  var el = document.getElementsByTagName("html")[0];
-  var acbox = document.getElementById(id),
+  var el = document.getElementsByTagName("html")[0],
+    acbox = document.getElementById(id),
     textNode = acbox.firstChild,
-    toggled = false;
+    toggled = true;
   acbox.addEventListener(
     clickEvent,
-    function() {
+    function () {
       var selector = Number((toggled = !toggled));
       textNode.data = textArr[selector];
       el.classList[classMethods[selector]](className);

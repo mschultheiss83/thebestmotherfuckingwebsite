@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const glob = require("glob");
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -11,7 +12,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
+  entry: glob.sync("./src/*.ts"),
 
   plugins: [
     new OptimizeCssAssetsPlugin(),
@@ -89,7 +90,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'index.html',
+              name: '[name].html',
               publicPath: '/'
             }
           },
@@ -124,4 +125,4 @@ module.exports = {
   optimization: {
     minimizer: [new TerserPlugin()],
   }
-}
+};

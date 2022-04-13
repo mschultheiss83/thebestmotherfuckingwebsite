@@ -1,0 +1,123 @@
+body {
+  padding-top: 16px;
+}
+
+.top-navigation {
+  overflow: hidden;
+  //background-color: @bodybgDarkColor;
+
+  a {
+    float: left;
+    display: block;
+    //color: @linkColor;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  a:last-child {
+    float: right;
+  }
+
+  .active {
+    //color: @motherfuckingColor;
+  }
+
+  .icon {
+    display: none;
+  }
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    //color: @linkColor;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #000;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 800px;
+}
+
+.sticky+body {
+  padding-top: 60px;
+}
+
+.top-navigation a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #555;
+  color: @linkColor;
+}
+
+.dropdown-content a:hover {
+  background-color: #555;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .top-navigation a:not(:first-child),
+  .dropdown .dropbtn {
+    display: none;
+  }
+  .top-navigation a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .top-navigation.responsive .icon {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  .top-navigation.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .top-navigation.responsive .dropdown {
+    float: none;
+  }
+  .top-navigation.responsive .dropdown-content {
+    position: relative;
+  }
+  .top-navigation.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}

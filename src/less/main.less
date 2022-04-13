@@ -1,18 +1,11 @@
-@bodybgColor: #fefefe;
-@bodyTextColor: #454545;
+@import (css) url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import (css) '../../web/fontawesome-free/css/all.min.css';
 
-// Link Colors
-@linkColor: #07A;
-@linkVisitedColor: #941352;
-@linkVisitedInvertedColor: #ac5a82;
-// ===============
-
-@wrongColor: #c0392b;
-@shittyBlue: #0000EE;
-@shittyViolet: #551A8B;
-@motherfuckingColor: #730000;
-@blockQuoteColor: #456;
-@openQuoteColor: #666;
+@import '../../web/fontawesome-free/less/fontawesome.less';
+@import '../../web/fontawesome-free/less/regular.less';
+@import '../../web/fontawesome-free/less/solid.less';
+@import "inc/colors";
+@import "inc/responsive-sticky-dropdown-navigation";
 
 .light(){
   html{
@@ -51,7 +44,7 @@
 }
 
 body{
-  font-family: "Open Sans", Arial;
+  font-family: "Open Sans", Arial, sans-serif;
   color: @bodyTextColor;
   font-size: 16px;
   margin: 2em auto;
@@ -240,13 +233,13 @@ blockquote{
   }
 
   &::before{
-    font-family: "Times New Roman", Times, Arial;
+    font-family: "Times New Roman", Times, Arial, sans-serif;
     color: @openQuoteColor;
     content: open-quote;
     font-size: 2.2em;
     font-weight: 600;
     float: left;
-    margin-top: 0em;
+    margin-top: 0;
     margin-right: 0.2rem;
     width: 1.2rem;
   }
@@ -316,7 +309,7 @@ button.cont-inv {
   right: 10px;
   font-size: 0.8em;
   text-decoration: underline;
-  border: 0px;
+  border: 0;
   padding: 2px 5px 2px 5px;
 }
 
